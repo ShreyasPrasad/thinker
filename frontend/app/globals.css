@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 75 50% 92%;
+    --foreground: 197 93% 6%;
+    --card: 75 50% 95%;
+    --card-foreground: 197 93% 6%;
+    --popover: 75 50% 95%;
+    --popover-foreground: 197 93% 6%;
+    --primary: 197 66% 21%;
+    --primary-foreground: 75 50% 92%;
+    --secondary: 125 18% 72%;
+    --secondary-foreground: 197 93% 6%;
+    --muted: 125 18% 80%;
+    --muted-foreground: 197 24% 46%;
+    --accent: 197 24% 46%;
+    --accent-foreground: 75 50% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 125 18% 75%;
+    --input: 125 18% 75%;
+    --ring: 197 66% 21%;
+    --chart-1: 197 66% 21%;
+    --chart-2: 197 24% 46%;
+    --chart-3: 125 18% 72%;
+    --chart-4: 197 66% 21%;
+    --chart-5: 197 24% 46%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 197 66% 21%;
+    --foreground: 75 50% 92%;
+    --card: 197 66% 21%;
+    --card-foreground: 75 50% 92%;
+    --popover: 197 66% 21%;
+    --popover-foreground: 75 50% 92%;
+    --primary: 197 24% 46%;
+    --primary-foreground: 75 50% 92%;
+    --secondary: 197 66% 21%;
+    --secondary-foreground: 75 50% 92%;
+    --muted: 197 66% 21%;
+    --muted-foreground: 197 24% 46%;
+    --accent: 197 24% 46%;
+    --accent-foreground: 75 50% 92%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 197 66% 21%;
+    --input: 197 66% 21%;
+    --ring: 197 24% 46%;
+    --chart-1: 197 24% 46%;
+    --chart-2: 125 18% 72%;
+    --chart-3: 197 66% 21%;
+    --chart-4: 197 24% 46%;
+    --chart-5: 125 18% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .logo-transparent {
+    background: transparent !important;
+  }
+  
+  .logo-transparent img {
+    background: transparent !important;
+  }
+  
+  /* Remove white background from logo using blend mode in light mode - make it dark color */
+  .logo-transparent img {
+    mix-blend-mode: multiply;
+    filter: brightness(0) saturate(100%);
+  }
+  
+  /* In dark mode, invert to light color and remove white background */
+  .dark .logo-transparent img {
+    mix-blend-mode: screen;
+    filter: brightness(0) invert(1);
+  }
+}
+
