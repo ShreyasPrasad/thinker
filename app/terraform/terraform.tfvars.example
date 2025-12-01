@@ -1,0 +1,10 @@
+project_id = "your-gcp-project-id"
+region     = "us-central1"
+
+function_name = "thinker-execute"
+
+environment_variables = {
+  # Add any environment variables needed for your function
+  # EXAMPLE_VAR = "example_value"
+}
+

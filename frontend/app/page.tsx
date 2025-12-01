@@ -36,16 +36,16 @@ export default function Home() {
           </div>
 
           {/* Two side-by-side components */}
-          <div className="flex-1 flex flex-col md:flex-row gap-6 min-h-0">
+          <div className="flex-1 flex flex-col md:flex-row gap-6 md:min-h-0">
             {/* Component 1: Code Editor */}
-            <div className="w-full md:flex-[0.7] flex flex-col gap-4 min-h-0">
+            <div className="w-full md:flex-[0.7] flex flex-col gap-4 md:min-h-0">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold">Code Editor</h2>
                 <Button onClick={handleRun} disabled={isRunning}>
                   {isRunning ? "Running..." : "Run"}
                 </Button>
               </div>
-              <div className="flex-1 min-h-[400px] md:min-h-0">
+              <div className="h-[400px] md:flex-1 md:h-auto md:min-h-0">
                 <CodeEditor
                   value={code}
                   onChange={(value) => setCode(value || "")}
@@ -56,9 +56,9 @@ export default function Home() {
             </div>
 
             {/* Component 2: Output Box */}
-            <div className="w-full md:flex-[0.3] flex flex-col gap-4 min-h-0">
+            <div className="w-full md:flex-[0.3] flex flex-col gap-4 md:min-h-0">
               <div className="hidden md:block h-[40px]"></div>
-              <div className="flex-1 min-h-[300px] md:min-h-0">
+              <div className="h-[300px] md:flex-1 md:h-auto md:min-h-0">
                 <OutputBox output={output} isRunning={isRunning} />
               </div>
             </div>
